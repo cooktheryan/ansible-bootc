@@ -1,0 +1,17 @@
+---
+- name: Test bootc
+  hosts: bootc
+  become: true
+  remote_user: exampleuser
+  gather_facts: no
+
+  tasks:
+  - name: Upgrade bootc
+    cooktheryan.bootc.bootc_manage:
+      state: switch
+      image: quay.io/rcook/bootc-chatbot:1
+    register: switch
+
+  - name: Reboot the system
+    ansible.builtin.reboot:
+    when: switch.changed

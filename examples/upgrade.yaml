@@ -1,0 +1,16 @@
+---
+- name: Test bootc
+  hosts: bootc
+  become: true
+  remote_user: exampleuser
+  gather_facts: no
+
+  tasks:
+  - name: Upgrade bootc
+    cooktheryan.bootc.bootc_manage:
+      state: latest
+    register: result
+
+  - name: Reboot the system
+    ansible.builtin.reboot:
+    when: result.changed

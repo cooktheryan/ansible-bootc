@@ -1,0 +1,31 @@
+namespace: cooktheryan
+name: bootc
+version: 0.0.1
+readme: README.md
+authors:
+  - Ryan Cook(rcook@redhat.com) 
+description: Bootc upgrade and switch
+license: GPL-3.0-or-later
+tags:
+  - containers
+  - podman
+  - bootc
+  - docker
+dependencies: {}
+repository: https://github.com/cooktheryan/ansible-bootc
+documentation: https://docs.ansible.com/ansible/latest/collections/cooktheryan/bootc/index.html
+homepage: https://github.com/cooktheryan/ansible-bootc
+issues: https://github.com/cooktheryan/ansible-bootc/issues
+build_ignore:
+  - ci
+  - tests/output
+  - build_artifact
+  - "*.tar.gz"
+  - ".gitignore"
+  - ".history"
+  - ".vscode"
+  - ".idea"
+  - ".github"
+  - contrib
+  - galaxy.yml.in
+  - importer_result.json
